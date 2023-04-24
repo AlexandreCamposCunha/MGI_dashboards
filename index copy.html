@@ -6,6 +6,7 @@
     <!-- Aqui você pode adicionar o link para os arquivo javascript -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
     <!-- Aqui você pode adicionar o link para o seu arquivo CSS -->
     <link rel="stylesheet" href="css/style.css">
   </head>
@@ -50,7 +51,7 @@
             <!-- Aqui é onde você adiciona o conteúdo dos Graficos -->
             <div class="row centraliza">
               <div class="col-md-6 rounded red mx-1 mb-2">
-                <div id="line-chart" class="mb-2 mt-2"></div>
+                <canvas id="line_Chart"></canvas>
               </div>
               <div class="col-md-5 rounded red mx-1 mb-2">
                 <div id="barchart" class="mb-2 mt-2"></div>
@@ -69,5 +70,6 @@
     <script src="js/dados_brutos.js"></script>
     <script src="js/dados_idade.js"></script>
     <script src="js/grafico_linha2.js"></script>
+    
   </body>
 </html>

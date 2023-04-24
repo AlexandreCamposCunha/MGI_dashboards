@@ -1,25 +1,68 @@
-google.charts.load('current', {'packages':['corechart']});
-google.charts.setOnLoadCallback(drawChart);
-function drawChart(array_geral) {
-    var meuArray2 = [    ['Ano', 'Vendas', 'Lucros'],
-    ['2020',  1000,      400],
-    ['2021',  1170,      460],
-    ['2022',  660,       1120],
-    ['2023',  1030,      540]
-        ];
-    var meuArray = meuArray2;
-    console.log(meuArray)
-    var data = google.visualization.arrayToDataTable(meuArray);
-  
-    var options = {
-      title: 'Vendas e lucros por ano',
-      curveType: 'function',
-      legend: { position: 'bottom' },
-      chartArea: {width: '80%', height: '80%'},
-      responsive: true
-    };
-  
-    var chart = new google.visualization.LineChart(document.getElementById('line-chart'));
-  
-    chart.draw(data, options);
+
+// obtendo a referência ao canvas
+const chartCanvas = document.getElementById('line_Chart');
+
+// criando os dados do gráfico
+function cria_grafico_linha(anos, Ativos, Aposentados, Pensionistas){
+const data = {
+  labels: anos,
+  datasets: [{
+    label: 'Servidores Ativos',
+    data: Ativos,
+    borderColor: 'blue',
+    borderWidth: 1,
+    fill: false
+  },
+  {
+    label: 'Aposentados',
+    data: Aposentados,
+    borderColor: 'red',
+    borderWidth: 1,
+    fill: false
+  },
+  {
+    label: 'Pensionistas',
+    data: Pensionistas,
+    borderColor: 'green',
+    borderWidth: 1,
+    fill: false
+  },
+]
+};
+
+
+// configurando o gráfico
+const config = {
+  type: 'line',
+  data: data,
+  options: {
+    responsive: true,
+    plugins: {
+      title: {
+        display: true,
+        text: 'Média de Idade dos Servidores'
+      },
+      legend: {
+        position: 'right',
+      }
+    },
+    scales: {
+      x:{
+        grid: {
+          display: false
+      }
+    },
+      y:{
+        grid: {
+          display: false
+      }
+
+      }
+
+    }
   }
+}
+
+// criando o gráfico
+const myChart = new Chart(chartCanvas, config);
+}

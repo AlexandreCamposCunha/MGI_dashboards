@@ -1,0 +1,90 @@
+body {
+   background-color:#f1f1f1; 
+  }
+#menu_lateral{
+   background-color: aqua;
+}
+
+#area_principal{
+    
+}
+
+.red{
+  background-color: #fffefe;
+
+}
+
+.font_cards{
+  font-weight: bold;
+  font-family: 'Roboto Slab';
+    font-size: 2.1875rem;
+}
+
+.font_cards_title{
+  font-weight: bold;
+  font-family: 'Roboto Slab';
+    font-size: 1.5rem;
+}
+
+  #area_principal h1 {
+    display: flex;
+    justify-content: center;
+    height: 18%;
+    text-align: center;
+  }
+  
+  .centraliza{
+    justify-content: center;
+    text-align: center;
+  }
+
+  .margem{
+    margin-right: 1%;
+    width: 80%;
+    height: 50%;
+  }
+
+  .card{
+    border: 0px;
+  }
+
+  .circulo {
+    margin: 15px;
+    width: 100%;
+    height: 150px;
+    background-image: url('observatório2.png');
+    background-size: cover;
+    background-position: center;
+  }
+
+  .hide-on-mobile {
+   
+  }
+
+  /* Cards */
+
+  .card1{
+    border-width: 2px;
+    border-style:solid;
+    border-color: rgb(93, 165, 218);
+    background-color: rgba(93, 165, 218,0.3);
+  }
+  .card2{
+    border-width: 2px;
+    border-style:solid;
+    border-color: rgb(250, 164, 58);
+    background-color: rgba(250, 164, 58,0.3);
+  }
+
+  .card3{
+    border-width: 2px;
+    border-style:solid;
+    border-color: rgb(96, 189, 104);
+    background-color: rgba(96, 189, 104,0.3);
+  }
+  .card4{
+    border-width: 2px;
+    border-style:solid;
+    border-color: rgb(241, 124, 176);
+    background-color: rgba(241, 124, 176,0.3);
+  }

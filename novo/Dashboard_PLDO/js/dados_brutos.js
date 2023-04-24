@@ -5,8 +5,5 @@ fetch('https://raw.githubusercontent.com/AlexandreCamposCunha/MGI_dashboards/mas
   .then(data => {
     dadosAPI = data;
     //levando os dados da API para a função processamento
-    dados_graficos_teste(dadosAPI);
-    processamento_dados(data);
-    cards_operacoes(data);
-    grafico_linha2(data);
+    funcoes_gerais(dadosAPI);
   });

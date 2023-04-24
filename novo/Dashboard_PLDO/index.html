@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <title>Dashboard Observatório de Pessoal</title>
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vina+Sans&display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100&display=swap" rel="stylesheet">
+    <!-- Aqui você pode adicionar o link para os arquivo javascript -->
+    <!-- CSS  bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- javascript  bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- Chart JS-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+    <!-- Aqui você pode adicionar o link para o seu arquivo CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!--Choices plugins -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+
+  </head>
+  <body>
+    <!-- Aqui é onde você adiciona o conteúdo da Pagina -->
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Aqui é onde você adiciona o conteúdo do Menu Lateral -->
+            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                <svg class="circulo hide-on-mobile"></svg>
+                <!--Select com choices -->
+                <div class="container">
+                    <h5>Ano:</h5>
+                    <select id="js-choice-ano" multiple onchange="printarEscolhas()">
+                        
+                    </select>
+                </div>
+
+            </nav>
+            <!-- Aqui é onde você adiciona o conteúdo da Dashboard -->
+            <div id="area_principal" class="col-md-10 ml-sm-auto col-lg-10 px-md-4">
+                <div class="row mb-4">
+                    <h1>Dashboard Observatório de Pessoal</h1>
+                </div>
+                <!-- Aqui é onde você adiciona os Cards de Informação-->
+                <div class="row centraliza">
+                    <div class="col-sm-3">
+                        <div class="rounded card1">
+                            <div id="title_card1" class="font_cards_title">Grupo de Servidores</div>
+                            <div id="info_card1" class="font_cards">3</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="rounded card2">
+                            <div id="title_card2" class="font_cards_title">Poderes</div>
+                            <div id="info_card2" class="font_cards">4</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="rounded card3">
+                            <div id="title_card3" class="font_cards_title">Servidores Ativos</div>
+                            <div id="info_card3" class="font_cards">662.793</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="rounded card4">
+                            <div id="title_card4" class="font_cards_title">Idade Média Aposentados</div>
+                            <div id="info_card4" class="font_cards">70</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Aqui é onde você adiciona os Graficos-->
+                <div class="row">
+
+                </div>
+            </div>
+        </div>
+    </div> 
+    <!-- Aqui é onde você adiciona os Javascripts-->
+    <script src="js/dados_brutos.js"></script>
+    <script src="js/funcoes.js"></script>
+  </body>
+</html>

@@ -1,3 +1,8 @@
+function transforma_float(numero){
+    let muda_virgula=numero.replace(',','.');
+    let numero_decimal=parseInt(muda_virgula);
+    return numero_decimal
+}
 function dados_graficos_teste(data){
     // Acessando a propriedade length
     console.log('Número de propriedades:', Object.keys(data).length);
@@ -16,34 +21,37 @@ function dados_graficos_teste(data){
         let condC=0;
         cont=0;
         let array_geral=[];
+        let Ativos=[]
+        let Aposentados=[]
+        let Pensionistas=[]
         for (let i = 0; i < myAnos.length; i++) {
-            let todos=[]
             for (const objeto of data) {
                 if (objeto.Ano === myAnos[i] && objeto.Grupo === 'Servidores' && objeto.Descricao==='Idade media (anos)' && objeto.Poder==='Executivo') {
-                    todos.push(objeto.Geral);
+                    //Trasforma em string o Ano
+                    idade_ativos=transforma_float(objeto.Geral)
+                    Ativos.push(idade_ativos);
                     condA=1;
                 }
                 else if (objeto.Ano === myAnos[i] && objeto.Grupo === 'Pensionistas' && objeto.Descricao==='Idade media (anos)' && objeto.Poder==='Executivo') {
-                    todos.push(objeto.Geral);
+                    idade_pensionistas=transforma_float(objeto.Geral)
+                    Pensionistas.push(idade_pensionistas);
                     condB=1;
                 }
                 else if (objeto.Ano === myAnos[i] && objeto.Grupo === 'Aposentados' && objeto.Descricao==='Idade media (anos)' && objeto.Poder==='Executivo') {
-                    todos.push(objeto.Geral);
+                    idade_aposentados=transforma_float(objeto.Geral)
+                    Aposentados.push(idade_aposentados);
                     condC=1;
                 }
                 else{
                     
                 }
-                if(condA===1 && condB===1 && condC===1 && todos.length===3){
-                    array_geral.push(todos);
-                    condA=0;
-                    condB=0;
-                    condC=0;
-                }
+                
           }
         }
+        array_geral.push(Ativos);
+        array_geral.push(Aposentados);
+        array_geral.push(Pensionistas);
         console.log(array_geral);
-
-        drawChart(array_geral);
+        cria_grafico_linha(myAnos, array_geral[0], array_geral[2], array_geral[1]);
 }
 
