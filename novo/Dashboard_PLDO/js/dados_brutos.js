@@ -7,3 +7,11 @@ fetch('https://raw.githubusercontent.com/AlexandreCamposCunha/MGI_dashboards/mas
     //levando os dados da API para a função processamento
     funcoes_gerais(dadosAPI);
   });
+
+
+  function outraFuncao(dadosAPI) {
+    // Use os dados do arquivo JSON aqui
+    console.log(dadosAPI);
+  }
+
+  outraFuncao();
